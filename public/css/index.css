@@ -1,0 +1,83 @@
+body {
+ background-image: url("../image/img_background_labtop.png");
+ background-size: cover;
+ background-repeat: no-repeat;
+ height: 100vh;
+ 
+}
+input {
+    font-size: 28px;
+    background-color: rgb(251, 229, 163);
+    width: 380px;
+    height: 60px;
+    padding: 12px;
+    border-radius: 18px;
+    box-sizing: border-box;
+    border: 4px solid rgb(0,3,73);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color:rgb(0,3,73);
+}
+.join-container{
+    display : flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    font-family: nanumExtraBold;
+    color: rgb(0,3,73);
+}
+.join-header{
+    font-family: nanumBold;
+    top: 140px;
+    position: absolute;
+    font-size: 35px;
+    justify-self: flex-start;
+}
+.join-main{
+    display: flex;
+    font-size: larger;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+}
+label[for="username"]{
+    font-family: nanumBold;
+    font-size: 80px;
+}
+button{
+    font-family: nanumExtraBold;
+    color: rgb(0,3,73);
+    font-size: 35px;
+    background-color: #99C3FF;
+    width: 180px;
+    height: 60px;
+    padding: 12px;
+    padding-top: 15px;
+    border-radius: 18px;
+    box-sizing: border-box;
+    border: 4px solid rgb(0,3,73);
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    cursor: pointer;
+    transition:all 0.9s, color 0.3;
+    -webkit-transition:all 0.9s, color 0.3;
+}
+button:hover{
+    color: #FFF;
+    box-shadow:200px 0 0 0 rgba(0,0,0,0.25) inset;
+}
+img.hat{
+    position:absolute;
+    left:400px;
+    top:160px;
+}
+img.medal{
+    position:absolute;
+    right:330px;
+    bottom:280px;
+}

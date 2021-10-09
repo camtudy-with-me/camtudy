@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/result.css" />
+    <title>ChatCord App</title>
+</head>
+<body>
+    <!--수료증-->
+    <div class="container">
+        <section>
+            <div class="paper">
+                <img src="image/img_result_paper.png" id="out">
+                <img src="image/img_level_6.png" id="in">
+                <div id="text">
+                    <h1>CERTIFICATION</h1>
+                    <h4 id="nickname">NICK NAME</h4>
+                    <div> You studied for <strong id="study_time">00</strong> minutes and focused for <strong id="open_time">00</strong> minutes. <br> <br> Your stage is <strong id="stage">척척박사</strong></div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="message">
+                    <div class="char">
+                        <img id ="stage2" src="image/img_level_6.png">
+                    </div>
+                    <div class="bubble">
+                        <div> You did it! FINALLY you have earned a master's degree.<br>
+                            If you want to save your data and see ranking, please press SAVE button.<br><br>
+                            If you want to exit this program than press EXIT!!</div>
+                    </div>
+                </div>
+                <div class="btns">
+                    <button type="submit" class="btn1"><a href="ranking.html">SAVE</a></button>
+                    <button type="submit" class="btn2">EXIT</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="/js/fetcher.js" type="module"></script>
+    <script src="/js/result.js" type="module"></script>
+    <script type="module">
+        import data from '../data/characters.js'
+        console.log(data);
+        
+        const name= document.querySelector("#nickname");
+        name.innerText= sessionStorage.getItem("username") || "username";
+
+        const study_time= document.querySelector("#study_time");
+        study_time.innerText= Math.ceil((new Date(sessionStorage.getItem("study_end")) - new Date(sessionStorage.getItem("study-start"))) / (1000 * 60));
+        const open_time= document.querySelector("#open_time");
+        open_time.innerText= Math.round(new Number(sessionStorage.getItem("open-score")));
+        
+        const level = Math.round(new Number(sessionStorage.getItem("open-score")))-1;
+        const grade= document.querySelector("#stage");
+        grade.innerText = data[level]['stage'];
+
+        const image= document.querySelector("#in");
+        image.src= data[level]['img-small'];
+
+        const image2= document.querySelector("#stage2");
+        image2.src=data[level]['img-small'];
+    </script>
+</body>
+</html>

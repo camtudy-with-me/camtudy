@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/room.css">
+  <title>ChatCord App</title>
+</head>
+<body>
+  <div class="container">
+    <section id="section1">
+      <div class="chat-container">
+        <header class="chat-header">
+          <img src="https://user-images.githubusercontent.com/53158200/136576541-d412cc72-29f7-4dbd-abd3-019c020ac450.png" width=220 id="myCharacter">
+        </header>
+        <main class="chat-main">
+            <video autoplay playsinline muted width="810" height="460" id="webcam"></video>
+          <br />
+          <div id="myName"><span id="myname"></span> (<span id="eyeopentime">0</span>p)</div>
+          <div id="text"></div>
+        </main>
+      </div>  
+    </section>
+    <section id="section2">
+      <section id="section3">
+        <div id="friendListTitle">FRIEND LIST</div>
+        <ul id="users"></ul>
+      </section>
+      <section id="section4">
+        <!--설정 버튼 -->
+        <section id="section5">OPTION</section>
+        <!-- 나가기 버튼 -->
+        <section id="section6"><a href="result.html" class="btn">QUIT</a></section>
+      </section>
+    </section>
+    
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js" integrity="sha512-aTKlYRb1QfU1jlF3k+aS4AqTpnTXci4R79mkdie/bp6Xm51O5O3ESAYhvg6zoicj/PD6VYY0XrYwsWLcvGiKZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/data-store.js" type="module"></script>
+  <script src="js/socket.js" type="module"></script>
+  <script src="js/dist/main.js"></script>
+  <script>
+    document.querySelector("#section6").addEventListener("click", ()=>{
+      sessionStorage.setItem("study_end", new Date())
+    })
+    document.querySelector("#myname").textContent = sessionStorage.getItem("username")
+    sleepAlert = setInterval(() => {
+      if(new Number(sessionStorage.getItem("close-duration")) > 0){
+        document.querySelector("#section1").style.backgroundColor = 'rgb(255,122,122)';
+      } else{
+        document.querySelector("#section1").style.backgroundColor = 'rgb(216, 230, 250)';
+      }
+    }, 100);
+  </script>
+</body>
+</html>

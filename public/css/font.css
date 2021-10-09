@@ -1,0 +1,20 @@
+@font-face {
+    font-family: nanumExtraBold;
+    src: url("../font/NanumSquareExtraBold.ttf") format('woff'),
+        url("../font/NanumSquareExtraBold.ttf") format('truetype');
+}
+@font-face {
+    font-family: nanumBold;
+    src: url("../font/NanumSquareBold.ttf") format('woff'),
+        url("../font/NanumSquareBold.ttf") format('truetype');
+}
+@font-face {
+    font-family: nanumLight;
+    src: url("../font/NanumSquareLight.ttf") format('woff'),
+        url("../font/NanumSquareLight.ttf") format('truetype');
+}
+@font-face {
+    font-family: nanumRegular;
+    src: url("../font/NanumSquareRegular.ttf") format('woff'),
+        url("../font/NanumSquareRegular.ttf") format('truetype');
+}
